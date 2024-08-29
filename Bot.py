@@ -42,7 +42,7 @@ class Bot(telebot.TeleBot):
     def make_main_menu_markup(user_id, admins_list):
         markup = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
 
-        button_send_message = telebot.types.KeyboardButton("Отправить работу")
+        button_send_message = telebot.types.KeyboardButton("Отправить информацию")
         button_report = telebot.types.KeyboardButton("Пожаловаться")
         button_help = telebot.types.KeyboardButton("FAQ")
 
@@ -225,7 +225,7 @@ class Bot(telebot.TeleBot):
 
         markup = self.make_send_message_menu_markup()
 
-        self.send_message(message.from_user.id, f'{self.__messages_for_commands["main_commands"]["Отправить работу"]}', reply_markup=markup)
+        self.send_message(message.from_user.id, f'{self.__messages_for_commands["main_commands"]["Отправить информацию"]}', reply_markup=markup)
 
     def text_command_send_message_action(self, message):
         database = Database('user_database.db')
@@ -803,12 +803,12 @@ class Bot(telebot.TeleBot):
 
         if message.text in self.__commands["main_commands"] and menu == 'MAIN_MENU':  # Обработка main_menu
             actions = {
-                "Отправить работу": self.text_command_send_message,
+                "Отправить информацию": self.text_command_send_message,
                 "Пожаловаться": self.text_command_report,
                 "Админ-панель": self.text_command_admin_panel,
                 "FAQ": self.text_command_help
             } if message.from_user.id in self.__admins else {
-                "Отправить работу": self.text_command_send_message,
+                "Отправить информацию": self.text_command_send_message,
                 "Пожаловаться": self.text_command_report,
                 "FAQ": self.text_command_help
             }
