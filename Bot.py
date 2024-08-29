@@ -717,7 +717,7 @@ class Bot(telebot.TeleBot):
         self.send_message(message.from_user.id, self.__messages_for_commands["help_commands"]["Как сохранить анонимность?"])
 
     def text_command_help_3(self, message):
-        self.send_message(message.from_user.id, self.__messages_for_commands["help_commands"]["Как отправлять работы?"])
+        self.send_message(message.from_user.id, self.__messages_for_commands["help_commands"]["Как отправлять информацию?"])
 
     def text_command_help_another(self, message):
         database = Database('user_database.db')
@@ -853,7 +853,7 @@ class Bot(telebot.TeleBot):
             actions = {
                 "Как достигается анонимность?": self.text_command_help_1,
                 "Как сохранить анонимность?": self.text_command_help_2,
-                "Как отправлять работы?": self.text_command_help_3,
+                "Как отправлять информацию?": self.text_command_help_3,
                 "Другой вопрос": self.text_command_help_another,
                 "Выйти": self.text_command_help_leave
             }
