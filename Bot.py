@@ -88,7 +88,7 @@ class Bot(telebot.TeleBot):
 
         button_1 = telebot.types.KeyboardButton("Как достигается анонимность?")
         button_2 = telebot.types.KeyboardButton("Как сохранить анонимность?")
-        button_3 = telebot.types.KeyboardButton("Как отправлять работы?")
+        button_3 = telebot.types.KeyboardButton("Как отправлять информацию?")
 
         button_another = telebot.types.KeyboardButton("Другой вопрос")
         button_escape = telebot.types.KeyboardButton("Выйти")
