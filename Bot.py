@@ -233,7 +233,7 @@ class Bot(telebot.TeleBot):
 
         markup = self.make_main_menu_markup(user_id=message.from_user.id, admins_list=self.__admins)
 
-        self.send_message(message.from_user.id, 'Работа успешно отправлена', reply_markup=markup)
+        self.send_message(message.from_user.id, 'Информация успешно отправлена', reply_markup=markup)
 
         logger = Logger('logs.db')
         logger.log('New message', message.from_user.id, f'User have sent message to everyone')
